@@ -72,8 +72,12 @@
   Fill them out with the right edge cases.
 -->
 
-- What happens when [boundary condition]?
-- How does system handle [error scenario]?
+- What happens when `localStorage` is unavailable, full, or cleared mid-session?
+- How does gameplay behave when frame rate drops below target (temporary load spikes,
+  tab visibility changes, low-power devices)?
+- How are random hazards telegraphed so no failure is instant or unavoidable?
+- How is visual readability preserved in low-light scenes for each creature/hazard type?
+- How does the game behave with audio disabled, blocked by autoplay policy, or unsupported?
 
 ## Requirements *(mandatory)*
 
@@ -84,11 +88,20 @@
 
 ### Functional Requirements
 
-- **FR-001**: System MUST [specific capability, e.g., "allow users to create accounts"]
-- **FR-002**: System MUST [specific capability, e.g., "validate email addresses"]  
-- **FR-003**: Users MUST be able to [key interaction, e.g., "reset their password"]
-- **FR-004**: System MUST [data requirement, e.g., "persist user preferences"]
-- **FR-005**: System MUST [behavior, e.g., "log all security events"]
+- **FR-001**: The game MUST run entirely client-side as static files with no backend,
+  server functions, or required API calls.
+- **FR-002**: The implementation MUST use vanilla JavaScript and HTML5 Canvas with no
+  external libraries, frameworks, build tools, npm packages, or CDN imports.
+- **FR-003**: Core rendering and gameplay updates MUST run through a
+  `requestAnimationFrame` game loop targeting a smooth 60fps experience.
+- **FR-004**: The game MUST persist high scores and level progress using `localStorage`.
+- **FR-005**: Randomized hazards MUST be fair: threats are telegraphed, avoidable, and
+  never instantly unavoidable.
+- **FR-006**: Visual entities (diver, creatures, hazards, light sources) MUST remain
+  immediately recognizable in low-light ocean scenes.
+- **FR-007**: The invisible gameplay grid MUST NOT be rendered or visible to players.
+- **FR-008**: If audio is implemented, it MUST be optional, generated via Web Audio API,
+  and MUST NOT affect core gameplay when absent.
 
 *Example of marking unclear requirements:*
 
@@ -109,7 +122,11 @@
 
 ### Measurable Outcomes
 
-- **SC-001**: [Measurable metric, e.g., "Users can complete account creation in under 2 minutes"]
-- **SC-002**: [Measurable metric, e.g., "System handles 1000 concurrent users without degradation"]
-- **SC-003**: [User satisfaction metric, e.g., "90% of users successfully complete primary task on first attempt"]
-- **SC-004**: [Business metric, e.g., "Reduce support tickets related to [X] by 50%"]
+- **SC-001**: In representative gameplay sessions, frame pacing remains smooth with no
+  sustained visible stutter under normal target-device conditions.
+- **SC-002**: Players can identify all core entity types (diver, hazard, creature,
+  brightness cues) at a glance in low-light scenes.
+- **SC-003**: New hazards introduced in a level are encountered with clear telegraphing
+  before first high-risk interaction.
+- **SC-004**: Saved progress and high scores persist across page reloads in browsers with
+  available `localStorage`.

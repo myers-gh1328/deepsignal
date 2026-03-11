@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Deep Signal</title>
+  <link rel="stylesheet" href="assets/css/game.css">
+</head>
+<body>
+  <div id="app">
+    <div class="top-hud">
+      <div class="hud-block"><span class="badge" id="levelLabel">Level 1</span><span id="storageWarning" class="storage-warning" hidden>Storage unavailable: progress will not persist.</span></div>
+      <div class="hud-block hud-center"><span id="starsPreview">Stars: 0</span></div>
+      <div class="hud-block hud-right"><span id="savedCounter">Saved: 0/0</span></div>
+    </div>
+    <div id="stage-wrap">
+      <canvas id="stage" width="1280" height="720" aria-label="Deep Signal game canvas"></canvas>
+      <div id="overlay"></div>
+      <div id="warningBanner" class="warning-banner" hidden></div>
+    </div>
+    <div class="bottom-hud">
+      <div id="inventoryHelp" class="inventory-help"></div>
+      <div id="inventory"></div>
+    </div>
+  </div>
+  <script src="assets/js/game.js" defer></script>
+</body>
+</html>

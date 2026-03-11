@@ -1,0 +1,10 @@
+{
+  "name": "deep-signal",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Deep Signal static browser game",
+  "scripts": {
+    "dev": "node scripts/dev-server.js",
+    "start": "node scripts/dev-server.js"
+  }
+}

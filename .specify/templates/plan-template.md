@@ -31,7 +31,20 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+- Static-only architecture: no backend services, no API dependencies, no runtime network
+  calls required for core gameplay.
+- Platform/runtime: vanilla JavaScript + HTML5 Canvas only; no frameworks, libraries,
+  package managers, build pipeline, or CDN imports.
+- Delivery: self-contained static output with valid `staticwebapp.config.json` for Azure
+  Static Web Apps root SPA hosting.
+- Performance: plan includes a 60fps `requestAnimationFrame` loop strategy and runtime
+  verification approach.
+- State and tuning: single game-state ownership and centralized gameplay constants are
+  explicitly designed.
+- Game fairness and readability: design includes threat telegraphing, avoidability, and
+  low-light silhouette clarity requirements.
+- Audio policy: optional audio cannot gate gameplay; if present, generated via Web Audio
+  API only.
 
 ## Project Structure
 
