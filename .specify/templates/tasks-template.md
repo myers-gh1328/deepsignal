@@ -48,9 +48,9 @@ description: "Task list template for feature implementation"
 
 **Purpose**: Project initialization and basic structure
 
-- [ ] T001 Create project structure per implementation plan
-- [ ] T002 Initialize [language] project with [framework] dependencies
-- [ ] T003 [P] Configure linting and formatting tools
+- [ ] T001 Create static project structure (`index.html`, `staticwebapp.config.json`, docs)
+- [ ] T002 Establish single-file architecture plan (HTML/CSS/JS co-located where feasible)
+- [ ] T003 [P] Define centralized gameplay constants block and base game-state schema
 
 ---
 
@@ -62,12 +62,12 @@ description: "Task list template for feature implementation"
 
 Examples of foundational tasks (adjust based on your project):
 
-- [ ] T004 Setup database schema and migrations framework
-- [ ] T005 [P] Implement authentication/authorization framework
-- [ ] T006 [P] Setup API routing and middleware structure
-- [ ] T007 Create base models/entities that all stories depend on
-- [ ] T008 Configure error handling and logging infrastructure
-- [ ] T009 Setup environment configuration management
+- [ ] T004 Implement `requestAnimationFrame` loop and delta-time update pipeline
+- [ ] T005 [P] Build Canvas renderer primitives for diver/creature/hazard silhouettes
+- [ ] T006 [P] Implement grid-to-world mapping with smooth visual interpolation
+- [ ] T007 Implement fairness telegraph system for random hazards and cooldown cues
+- [ ] T008 Add `localStorage` persistence wrapper for progress and scores
+- [ ] T009 Validate static hosting compatibility and `staticwebapp.config.json` behavior
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 
@@ -88,12 +88,12 @@ Examples of foundational tasks (adjust based on your project):
 
 ### Implementation for User Story 1
 
-- [ ] T012 [P] [US1] Create [Entity1] model in src/models/[entity1].py
-- [ ] T013 [P] [US1] Create [Entity2] model in src/models/[entity2].py
-- [ ] T014 [US1] Implement [Service] in src/services/[service].py (depends on T012, T013)
-- [ ] T015 [US1] Implement [endpoint/feature] in src/[location]/[file].py
-- [ ] T016 [US1] Add validation and error handling
-- [ ] T017 [US1] Add logging for user story 1 operations
+- [ ] T012 [P] [US1] Add primary gameplay entities and state transitions in `index.html`
+- [ ] T013 [P] [US1] Implement input handling and movement constraints in `index.html`
+- [ ] T014 [US1] Wire update/render cycle for US1 mechanics in `index.html`
+- [ ] T015 [US1] Add fairness telegraphing and feedback cues for US1 hazards
+- [ ] T016 [US1] Add persistence hooks for US1 progress in `localStorage`
+- [ ] T017 [US1] Verify no grid visuals leak into player-facing rendering
 
 **Checkpoint**: At this point, User Story 1 should be fully functional and testable independently
 
@@ -152,9 +152,10 @@ Examples of foundational tasks (adjust based on your project):
 
 - [ ] TXXX [P] Documentation updates in docs/
 - [ ] TXXX Code cleanup and refactoring
-- [ ] TXXX Performance optimization across all stories
+- [ ] TXXX Performance optimization and frame pacing checks across all stories
 - [ ] TXXX [P] Additional unit tests (if requested) in tests/unit/
-- [ ] TXXX Security hardening
+- [ ] TXXX Visual readability pass for silhouettes, glow contrast, and brightness cues
+- [ ] TXXX Fairness pass for hazard timing, warnings, and avoidability windows
 - [ ] TXXX Run quickstart.md validation
 
 ---
